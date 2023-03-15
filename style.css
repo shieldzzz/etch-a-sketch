@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 1em;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+.board {
+    width: 500px;
+    height: 500px;
+}
+
+.container {
+    max-width: 500px;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-around;
+}

@@ -1,15 +1,18 @@
-let container = document.createElement('div');
-container.style.display = 'grid';
-container.style.gridTemplateColumns = 'repeat(16, 0fr)';
-container.style.gridTemplateRows = 'repeat(16, 0fr)';
+let board = document.querySelector('.board');
+board.style.display = 'grid';
+board.style.gridTemplateColumns = 'repeat(32, 1fr)';
+board.style.gridTemplateRows = 'repeat(32, 1fr)';
 
-for (var i = 0; i < 256; i++) {
+for (let i = 0; i < 1024; i++) {
     let square = document.createElement('div');
-    square.style.width = '10px';
-    square.style.height = '10px';
     square.style.backgroundColor = 'white';
+    square.style.width = 'auto';
+    square.style.height = 'auto';
     square.style.border = '1px solid black';
-    container.appendChild(square);
+    board.insertAdjacentElement('beforeend', square);
 }
 
-document.body.appendChild(container);
+
+
+
+
