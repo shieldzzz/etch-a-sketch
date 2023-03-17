@@ -6,16 +6,22 @@ function makeGrid(numSquare) {
 
     for (let i = 0; i < (numSquare * numSquare); i++) {
         let square = document.createElement('div');
-        square.style.backgroundColor = 'white';
+        square.style.backgroundColor = 'linen';
         square.style.width = 'auto';
         square.style.height = 'auto';
-        square.style.border = '1px solid black';
+        square.style.boxShadow = '0 0 1px black';
+        square.addEventListener('mouseover', () => {
+            square.style.backgroundColor = 'black';
+        });
         board.appendChild(square);
     }
+    const clearBtn = document.getElementById('clearGrid');
+    clearBtn.addEventListener('click', () => {
+        let squares = document.querySelectorAll('.board div');
+        squares.forEach((square) => {
+            square.style.backgroundColor = 'linen';
+        });
+    }); 
 }
 
-makeGrid(16);
-
-
-
-
+makeGrid(32);
