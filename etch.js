@@ -1,4 +1,14 @@
-function makeGrid(numSquare) { 
+const adjustBtn = document.getElementById('adjustSize');
+adjustBtn.addEventListener('click', () => {
+    let newSize = prompt('Enter a whole number between 16 and 100.');
+    if (newSize >= 16 && newSize <= 100 && Number.isInteger(Number(newSize))) {
+        makeGrid(newSize);
+    } else {
+        alert('Please enter a valid number between 16 and 100');
+    }
+});
+
+function makeGrid(numSquare = 16) { 
     let board = document.querySelector('.board');
     board.style.display = 'grid';
     board.style.gridTemplateColumns = `repeat(${numSquare}, 1fr)`;
@@ -24,4 +34,5 @@ function makeGrid(numSquare) {
     }); 
 }
 
-makeGrid(32);
+makeGrid();
+
