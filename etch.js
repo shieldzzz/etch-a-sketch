@@ -1,5 +1,6 @@
 const adjustBtn = document.getElementById('adjustSize');
 const randomBtn = document.getElementById('randomColor');
+const blackBtn = document.getElementById('blackButton');
 
 adjustBtn.addEventListener('click', () => {
     let newSize = prompt('Enter a whole number between 16 and 100.');
@@ -18,6 +19,15 @@ randomBtn.addEventListener('click', () => {
         });
     });
 });
+
+blackBtn.addEventListener('click', () => {
+    let squares = document.querySelectorAll('.board div');
+    squares.forEach((square) => {
+        square.addEventListener('mouseover', () => {
+            square.style.backgroundColor = 'black';
+        });
+    });
+})
 
 function makeGrid(numSquare = 16) { 
     let board = document.querySelector('.board');
