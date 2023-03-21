@@ -33,7 +33,7 @@ blackBtn.addEventListener('click', () => {
             square.style.backgroundColor = 'black';
         });
     });
-})
+});
 
 clearBtn.addEventListener('click', () => {
     let squares = document.querySelectorAll('.board div');
