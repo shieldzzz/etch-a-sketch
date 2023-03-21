@@ -2,9 +2,14 @@ const adjustBtn = document.getElementById('adjustSize');
 const randomBtn = document.getElementById('randomColor');
 const blackBtn = document.getElementById('blackButton');
 const clearBtn = document.getElementById('clearGrid');
+const shadeBtn = document.getElementById('shadeButton');
 
 adjustBtn.addEventListener('click', () => {
     let newSize = prompt('Enter a whole number between 16 and 100.');
+    let squares = document.querySelectorAll('.board div');
+    squares.forEach((square) => {
+        square.style.backgroundColor = '#f7f7f7';
+    });
     if (newSize >= 16 && newSize <= 100 && Number.isInteger(Number(newSize))) {
         makeGrid(newSize);
     } else {
@@ -30,11 +35,24 @@ blackBtn.addEventListener('click', () => {
     });
 })
 
-
 clearBtn.addEventListener('click', () => {
     let squares = document.querySelectorAll('.board div');
     squares.forEach((square) => {
-        square.style.backgroundColor = 'linen';
+        square.style.backgroundColor = '#f7f7f7';
+    });
+});
+
+shadeBtn.addEventListener('click', () => {
+    let squares = document.querySelectorAll('.board div');
+    squares.forEach((square) => {
+        let shadeCount = 0;
+        square.addEventListener('mouseover', () => {
+            if (shadeCount < 10) {
+                shadeCount++;
+                let opacity = 0.1 * shadeCount;
+                square.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
+            }
+        });
     });
 });
 
@@ -46,7 +64,7 @@ function makeGrid(numSquare = 16) {
 
     for (let i = 0; i < (numSquare * numSquare); i++) {
         let square = document.createElement('div');
-        square.style.backgroundColor = 'linen';
+        square.style.backgroundColor = '#f7f7f7';
         square.style.width = 'auto';
         square.style.height = 'auto';
         square.style.boxShadow = '0 0 1px black';
