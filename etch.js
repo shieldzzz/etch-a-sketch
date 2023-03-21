@@ -51,6 +51,8 @@ shadeBtn.addEventListener('click', () => {
                 shadeCount++;
                 let opacity = 0.1 * shadeCount;
                 square.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
+            } else {
+                square.style.backgroundColor = 'black';
             }
         });
     });
