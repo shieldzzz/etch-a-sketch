@@ -12,6 +12,11 @@ adjustBtn.addEventListener('click', () => {
     });
     if (newSize >= 1 && newSize <= 100 && Number.isInteger(Number(newSize))) {
         makeGrid(newSize);
+        squares.forEach((square) => {
+            square.addEventListener('mouseover', () => {
+                square.style.backgroundColor = 'black';
+            });
+        });           
     } else {
         alert('Please enter a whole number between 1 and 100');
     }
