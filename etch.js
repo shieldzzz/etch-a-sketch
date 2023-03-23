@@ -5,15 +5,15 @@ const clearBtn = document.getElementById('clearGrid');
 const shadeBtn = document.getElementById('shadeButton');
 
 adjustBtn.addEventListener('click', () => {
-    let newSize = prompt('Enter a whole number between 16 and 100.');
+    let newSize = prompt('Enter a whole number between 1 and 100.');
     let squares = document.querySelectorAll('.board div');
     squares.forEach((square) => {
         square.style.backgroundColor = '#f7f7f7';
     });
-    if (newSize >= 16 && newSize <= 100 && Number.isInteger(Number(newSize))) {
+    if (newSize >= 1 && newSize <= 100 && Number.isInteger(Number(newSize))) {
         makeGrid(newSize);
     } else {
-        alert('Please enter a valid number between 16 and 100');
+        alert('Please enter a whole number between 1 and 100');
     }
 });
 
@@ -58,7 +58,7 @@ shadeBtn.addEventListener('click', () => {
     });
 });
 
-function makeGrid(numSquare = 16) { 
+function makeGrid(numSquare) { 
     let board = document.querySelector('.board');
     board.style.display = 'grid';
     board.style.gridTemplateColumns = `repeat(${numSquare}, 1fr)`;
@@ -77,5 +77,5 @@ function makeGrid(numSquare = 16) {
     }
 }
 
-makeGrid();
+makeGrid(16);
 
