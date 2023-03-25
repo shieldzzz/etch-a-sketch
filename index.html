@@ -5,25 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="etch.js" defer></script>
-    <link rel="stylesheet" href="style.css">
-    <title>Etch-A-Sketch</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Pixel Sketch</title>
 </head>
 <body>
     <main>
         <div class="container">
-            <header class="title"><h1>Etch-A-Sketch</h1></header>
-            <div class="board"></div>
-            <div class="controls">
+            <header class="title"><h1>Pixel - Sketch</h1></header>
                 <div class="buttons">
                     <button id="blackButton">Black</button>
                     <button id="randomColor">Random</button>
-                    <button id="shadeButton">Shade</button>
-                    <button id="adjustSize">Adjust Size</button>
+                    <div class="colorContainer">
+                        <label for="colorPicker">Color</label>
+                        <input type="color" id="colorPicker" value="#da4d43">
+                    </div>
                     <button id="clearGrid">Clear</button>
                 </div>
-            <div>
-                
-            </div>
+            <div class="slidecontainer">
+                <p>Adjust Size</p>
+                <input type="range" min="4" max="64" value="16" class="slider" id="myRange">
+                <span id="rangeValue">16</span>
+            </div>    
+            <div class="board"></div>    
+            <footer class="footer">Made by: Shields Stutts 
+                <a href="https://github.com/shieldzzz/rock-paper-scissors" target="_blank">
+                    <img class="github-link" src="/practice-2/github-mark-orange.png"></a></footer>         
         </div>
     </main>
 </body>
