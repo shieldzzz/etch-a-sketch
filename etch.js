@@ -19,7 +19,8 @@ colorPicker.addEventListener('click', (event) => {
                 square.style.backgroundColor = event.target.value;
             }    
         });
-        square.addEventListener('mousedown', ()  => {
+        square.addEventListener('mousedown', (event)  => {
+            event.preventDefault();
             isDrawing = true;
             square.style.backgroundColor = event.target.value;
         });
@@ -42,7 +43,8 @@ sizeRange.addEventListener('input', () => {
                 square.style.backgroundColor = 'black';
             }
         });
-        square.addEventListener('mousedown', () => {
+        square.addEventListener('mousedown', (event) => {
+            event.preventDefault();
             isDrawing = true;
             square.style.backgroundColor = 'black';
         });
@@ -60,7 +62,8 @@ randomBtn.addEventListener('click', () => {
                 square.style.backgroundColor = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
             }
         });
-        square.addEventListener('mousedown', () => {
+        square.addEventListener('mousedown', (event) => {
+            event.preventDefault();
             isDrawing = true;
             square.style.backgroundColor = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
         });
@@ -78,7 +81,8 @@ blackBtn.addEventListener('click', () => {
             square.style.backgroundColor = 'black';
             }
         });
-        square.addEventListener('mousedown', () => {
+        square.addEventListener('mousedown', (event) => {
+            event.preventDefault();
             isDrawing = true;
             square.style.backgroundColor = 'black';
         });
@@ -112,7 +116,8 @@ function makeGrid(numSquare) {
                 square.style.backgroundColor = 'black';
             }
         });
-        square.addEventListener('mousedown', () => {
+        square.addEventListener('mousedown', (event) => {
+            event.preventDefault();
             isDrawing = true;
             square.style.backgroundColor = 'black';
         });
