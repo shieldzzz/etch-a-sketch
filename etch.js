@@ -20,8 +20,7 @@ colorPicker.addEventListener('click', (event) => {
                 square.style.backgroundColor = event.target.value;
             }    
         });
-        square.addEventListener('mousedown', (event)  => {
-            event.preventDefault();
+        square.addEventListener('mousedown', ()  => {
             isDrawing = true;
             square.style.backgroundColor = event.target.value;
         });
