@@ -111,7 +111,7 @@
   }
   
   .slider{
-    -webkit-appearance: none;
+    appearance: none;
     background:  rgb(26, 154, 111);
     outline: none;
     border-radius: 1em; 
