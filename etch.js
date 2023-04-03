@@ -5,11 +5,22 @@ const sizeRange = document.getElementById('myRange');
 const sizeRangeValue = document.getElementById('rangeValue');
 const colorPicker = document.getElementById('colorPicker');
 
+let isDrawing = false;
+
 colorPicker.addEventListener('click', (event) => {
     let squares = document.querySelectorAll('.board div');
     squares.forEach((square) => {
         square.addEventListener('mouseover', () => {
+            if (isDrawing) {
+                square.style.backgroundColor = event.target.value;
+            }    
+        });
+        square.addEventListener('mousedown', ()  => {
+            isDrawing = true;
             square.style.backgroundColor = event.target.value;
+        });
+        square.addEventListener('mouseup', () => {
+            isDrawing = false;
         });
     });
 });
@@ -23,7 +34,16 @@ sizeRange.addEventListener('input', () => {
     squares.forEach((square) => {
         square.style.backgroundColor = '#f7f7f7';
         square.addEventListener('mouseover', () => {
+            if (isDrawing) {
+                square.style.backgroundColor = 'black';
+            }
+        });
+        square.addEventListener('mousedown', () => {
+            isDrawing = true;
             square.style.backgroundColor = 'black';
+        });
+        square.addEventListener('mouseup', () => {
+            isDrawing = false;
         });
     });
 });
@@ -32,7 +52,16 @@ randomBtn.addEventListener('click', () => {
     let squares = document.querySelectorAll('.board div');
     squares.forEach((square) => {
         square.addEventListener('mouseover', () => {
+            if (isDrawing) {
+                square.style.backgroundColor = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
+            }
+        });
+        square.addEventListener('mousedown', () => {
+            isDrawing = true;
             square.style.backgroundColor = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
+        });
+        square.addEventListener('mouseup', () => {
+            isDrawing = false;
         });
     });
 });
@@ -41,7 +70,16 @@ blackBtn.addEventListener('click', () => {
     let squares = document.querySelectorAll('.board div');
     squares.forEach((square) => {
         square.addEventListener('mouseover', () => {
+            if (isDrawing) {
             square.style.backgroundColor = 'black';
+            }
+        });
+        square.addEventListener('mousedown', () => {
+            isDrawing = true;
+            square.style.backgroundColor = 'black';
+        });
+        square.addEventListener('mouseup', () => {
+            isDrawing = false;
         });
     });
 });
@@ -66,7 +104,16 @@ function makeGrid(numSquare) {
         square.style.height = 'auto';
         square.style.boxShadow = '0 0 1px black';
         square.addEventListener('mouseover', () => {
+            if (isDrawing) {
+                square.style.backgroundColor = 'black';
+            }
+        });
+        square.addEventListener('mousedown', () => {
+            isDrawing = true;
             square.style.backgroundColor = 'black';
+        });
+        square.addEventListener('mouseup', () => {
+            isDrawing = false;
         });
         board.appendChild(square);
     }
