@@ -7,6 +7,10 @@ const colorPicker = document.getElementById('colorPicker');
 
 let isDrawing = false;
 
+window.addEventListener('mouseup', () => {
+    isDrawing = false;
+});
+
 colorPicker.addEventListener('click', (event) => {
     let squares = document.querySelectorAll('.board div');
     squares.forEach((square) => {
