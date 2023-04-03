@@ -4,6 +4,7 @@ const clearBtn = document.getElementById('clearGrid');
 const sizeRange = document.getElementById('myRange');
 const sizeRangeValue = document.getElementById('rangeValue');
 const colorPicker = document.getElementById('colorPicker');
+const eraseBtn = document.getElementById('eraseButton');
 
 let isDrawing = false;
 
@@ -78,7 +79,7 @@ blackBtn.addEventListener('click', () => {
     squares.forEach((square) => {
         square.addEventListener('mouseover', () => {
             if (isDrawing) {
-            square.style.backgroundColor = 'black';
+                square.style.backgroundColor = 'black';
             }
         });
         square.addEventListener('mousedown', (event) => {
@@ -89,6 +90,25 @@ blackBtn.addEventListener('click', () => {
         square.addEventListener('mouseup', () => {
             isDrawing = false;
         });
+    });
+});
+
+eraseBtn.addEventListener('click', () => {
+    let squares = document.querySelectorAll('.board div');
+    squares.forEach((square) => {
+        square.addEventListener('mouseover', () => {
+            if (isDrawing) {
+                square.style.backgroundColor = '#f7f7f7';
+            }
+        });
+        square.addEventListener('mousedown', (event) => {
+            event.preventDefault();
+            isDrawing = true;
+            square.style.backgroundColor = '#f7f7f7';
+        });
+        square.addEventListener('mouseup', () => {
+            isDrawing = false;
+        }); 
     });
 });
 
